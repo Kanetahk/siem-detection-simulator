@@ -1,11 +1,14 @@
 siem-detection-simulator/
-├── .venv/
-├── locales/pt-BR/README.md
+├── app.py
 ├── src/
-│   ├── gui/                    # janela, caixa de seleçao, botao, preview
+│   ├── gui/
+│   │   └── __init__.py
 │   └── logsgenerator/
+│       ├── __init__.py
 │       └── beaconing/
-│           └── beaconing.py    # o gerador em si, seguindo o formato padrao
-├── .gitignore
-├── app.py                      # na root, abre a GUI
-└── README.md
+│           ├── __init__.py
+│           └── beaconing.py
+├── tests/
+├── locales/pt-BR/README.md
+├── README.md
+└── .gitignore
