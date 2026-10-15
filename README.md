@@ -6,7 +6,21 @@ detection logic (SPL searches, correlation rules) before pointing them
 at real telemetry. No real attack, network connection, or system call is
 performed by any script here.
 
-*Read this in: [Português](./locales/pt-BR/README.md)*
+*Read this in: [Português](./locales/pt-br/README.md)*
+
+## Quick start
+
+```bash
+source .venv/bin/activate
+python app.py
+```
+
+First time: run `python -m venv .venv` before the commands above.
+Needs Python with tkinter (on Arch: `sudo pacman -S tk`).
+The interface is still in development.
+
+*To run the full lab these logs feed into, see the Quick start in [soc-lab](https://github.com/Kanetahk/soc-lab#quick-start).*
+
 
 ## Why this exists
 
@@ -25,14 +39,13 @@ and [soc-lab](https://github.com/Kanetahk/soc-lab) for where that happens.
 ## Project structure
 ```
 siem-detection-simulator/
-├── .venv/
 ├── locales/
 │   └── pt-br/
 │       └── README.md
 ├── src/
 │   ├── gui/
 │   │   └── __init__.py
-│   └── generator/
+│   └── logsgenerator/
 │       ├── __init__.py
 │       └── beaconing/
 │           ├── __init__.py
@@ -50,13 +63,20 @@ siem-detection-simulator/
 
 | Script | Simulates | MITRE ATT&CK |
 |---|---|---|
-| `generators/beaconing.py` | C2 beaconing: regular-interval outbound connection | T1071 (Command and Control) |
+| `src/logsgenerator/beaconing/beaconing.py` | C2 beaconing: regular-interval outbound connection | T1071 (Command and Control) |
 
 ## Usage
 
+`app.py` is the entry point. Run it from the project root to open the
+tkinter interface:
+
 ```bash
-python generators/beaconing.py
+python app.py
 ```
+
+Pick a generator from the list, check its description and an example of
+the log line it produces, then click the generate button to write that
+generator's log file.
 
 Each generator writes its own log file, next to the script, in the
 format documented in its own header comment.
