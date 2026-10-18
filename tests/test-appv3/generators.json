@@ -1,0 +1,36 @@
+{
+"GENERATORS": {
+    "Beaconing": {
+    "description": "Outbound connections at a regular interval (C2).",
+    "example": "event=network_connect dst_port=443"
+},
+    "Failed logins": {
+    "description": "Repeated authentication attempts with a wrong password.",
+    "example": "action=failure user=admin"
+},
+    "DNS Poisoning": {
+    "description": "Manipulation of DNS cache to redirect traffic to unauthorized or malicious IP addresses.",
+    "example": "event=dns_query query=bank.com response=10.10.10.10 ttl=0"
+},
+    "SQL Injection": {
+    "description": "Insertion of malicious SQL statements into entry fields for execution or data leakage.",
+    "example": "event=http_request uri='/login.php?user=admin%27%20OR%201%3D1%20--' status=200"
+},
+    "Brute Force": {
+    "description": "High volume of rapid authentication attempts targeting multiple accounts or variations.",
+    "example": "event=auth_attempt status=failed count=150 src_ip=11.11.11.11 user=root"
+},
+    "Data Exfiltration": {
+    "description": "Unauthorized transfer of sensitive data from inside the network to an external destination.",
+    "example": "event=file_transfer bytes_sent=4500000000 dst_ip=12.12.12.12 protocol=ftp"
+},
+    "Ransomware Activity": {
+    "description": "Massive and rapid modification of file extensions and headers indicating bulk encryption.",
+    "example": "event=file_modify path='C:\\Users\\Shares\\document.pdf.locked' action=renamed"
+},
+    "Atributo sem valor": {
+    "description": "",
+    "example": ""
+}
+}
+}
