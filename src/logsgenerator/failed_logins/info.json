@@ -1,0 +1,5 @@
+{
+  "name": "Failed logins",
+  "description": "Repeated authentication attempts with a wrong password.",
+  "example": "action=failure user=admin"
+}

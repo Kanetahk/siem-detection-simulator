@@ -1,0 +1,5 @@
+{
+  "name": "Beaconing",
+  "description": "Outbound connections at a regular interval (C2).",
+  "example": "event=network_connect dst_port=443"
+}
